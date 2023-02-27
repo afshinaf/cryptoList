@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import axios from 'axios';
 
 const Main = () => {
@@ -34,7 +35,9 @@ const Main = () => {
                                 <>
                                     <tr className="h-10">
                                         <td className="text-left pl-4" onClick={() => console.log('afshin', item)}>{item.market_cap_rank}</td>
-                                        <td className="text-left">{item.name}</td>
+                                        <td className="text-left">
+                                            <Link href={`crypto/${item.name}`}>{item.name}</Link>
+                                        </td>
                                         <td className="text-left">{item.current_price}</td>
                                         <td className={`text-left ${item.price_change_percentage_24h <= 0 ? 'text-red-600' : 'text-lime-600'}`}>
                                             {`${item.price_change_percentage_24h.toFixed(2)}%`}
