@@ -1,8 +1,12 @@
-const Layout  = (props: any) => {
+import { Header, Main, Footer} from './index'
+
+const Layout  = () => {
     return (
         <>
             <div className="container mx-auto py-4 h-screen">
-                {props.children}
+                <Header />
+                <Main />
+                <Footer />
             </div>
         </>
     )
